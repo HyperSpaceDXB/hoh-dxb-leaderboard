@@ -11,8 +11,9 @@ const Leader: FC<ILeader> = ({
 }) => {
   return (
     <div
+      id="leader"
       key={id}
-      className="flex justify-between items-center bg-ComponentDarkGrey w-full h-32 px-8 mb-8"
+      className="flex justify-between items-center bg-ComponentDarkGrey w-full h-32 px-8 mb-8 bg-gray-50"
     >
       <div className="h-full w-3/4 flex justify-start items-center [&>*]:mr-8">
         <p>{position}</p>

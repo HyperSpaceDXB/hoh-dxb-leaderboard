@@ -14,7 +14,6 @@ function useSwr<T>(
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  console.log("key", key);
   useEffect(() => {
     const fetchData = async () => {
       try {

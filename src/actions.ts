@@ -6,7 +6,6 @@ import { Period } from "./types";
 export const fetchLeadersAction = async (
   period: Period
 ): Promise<ILeader[]> => {
-  console.log("fetchLeadersAction", period);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/park/leaderboard/`,
     {
