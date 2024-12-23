@@ -1,4 +1,4 @@
-import { Leader, Period } from "../types";
+import { ILeader, Period } from "../types";
 import { fetchLeadersAction } from "@/actions";
 import useSwr from "./swr";
 
@@ -7,10 +7,11 @@ export const useLeaders = ({
 }: {
   period: Period;
 }): {
-  data: Leader[] | null;
+  data: ILeader[] | null;
   isLoading: boolean;
   error: Error | null;
-} =>
-  useSwr("/api/park/leaderboard/", () => fetchLeadersAction(period), {
+} => {
+  return useSwr(`${period}/leaderboard`, () => fetchLeadersAction(period), {
     refreshInterval: 60000,
   });
+};

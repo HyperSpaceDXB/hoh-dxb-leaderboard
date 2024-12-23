@@ -1,5 +1,11 @@
-import Leaders from "@/components/leaders";
+import Heading from "@/components/heading";
+import AlternatingLeaderboard from "@/features/alternatingLeaderboards";
 
 export default function Home() {
-  return <Leaders />;
+  return (
+    <div>
+      <Heading />
+      <AlternatingLeaderboard />
+    </div>
+  );
 }
