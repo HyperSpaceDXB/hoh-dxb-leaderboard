@@ -21,6 +21,9 @@ export default {
         PPMon: ["var(--font-PPMon)"],
         geSS: ["var(--font-geSS)"],
       },
+      screens: {
+        "2xl": "3700px",
+      },
     },
   },
   plugins: [],

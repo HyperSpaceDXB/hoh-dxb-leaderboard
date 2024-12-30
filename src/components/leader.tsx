@@ -16,7 +16,7 @@ const Leader: FC<ILeader> = ({
     <div
       id="leader"
       key={id}
-      className="flex justify-between items-center w-[1680px] h-[200px] px-20 bg-gray border-green border-[2px] shadow-greenShadow rounded-[20px]"
+      className="flex justify-between items-center w-[1900px] 2xl:w-[1680px] h-[200px] px-20 bg-gray border-green border-[2px] shadow-greenShadow rounded-[20px]"
     >
       <div className="h-full flex justify-start gap-[50px] items-center">
         <p className="text-[50px]">{position}.</p>

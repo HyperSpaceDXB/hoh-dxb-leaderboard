@@ -34,7 +34,7 @@ export default function AlternatingLeaderboard() {
     case 0:
       return (
         <div>
-          <div className="flex justify-between text-green text-[70px] my-[35px] w-[3460px]">
+          <div className="flex justify-between text-green text-[70px] my-[50px] 2xl:mb-[35px] w-[1900px] 2xl:w-[3460px]">
             <p>All Time</p>
             <p className="font-geSS">المتفوقون دائماً</p>
           </div>
@@ -46,7 +46,7 @@ export default function AlternatingLeaderboard() {
     case 2:
       return (
         <div>
-          <div className="flex justify-between text-green text-[70px] my-[35px]  w-[3460px]">
+          <div className="flex justify-between text-green text-[70px] my-[50px] 2xl:mb-[35px] w-[1900px] 2xl:w-[3460px]">
             <p>Daily</p>
             <p className="font-geSS">المتفوقون اليوم</p>
           </div>
