@@ -10,7 +10,12 @@ export default {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        gray: "var(--gray)",
+        green: "var(--green)",
+        white: "var(--white)",
+      },
+      boxShadow: {
+        greenShadow: "0px 0px 30px 8px #4cff9f",
       },
     },
   },

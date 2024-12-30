@@ -1,4 +1,5 @@
 import { ILeader } from "@/types";
+import Image from "next/image";
 import { FC } from "react";
 
 const Leader: FC<ILeader> = ({
@@ -13,20 +14,25 @@ const Leader: FC<ILeader> = ({
     <div
       id="leader"
       key={id}
-      className="flex justify-between items-center bg-ComponentDarkGrey w-full h-32 px-8 mb-8 bg-gray-50"
+      className="flex justify-between items-center bg-ComponentDarkGrey h-[200px] px-8 mb-8 bg-gray border-green border-[2px] shadow-greenShadow rounded-[20px]"
     >
       <div className="h-full w-3/4 flex justify-start items-center [&>*]:mr-8">
         <p>{position}</p>
-        <img
-          src={avatar_thumbnail || avatar || "./avatar.jpg"}
-          alt="avatar"
-          className="h-3/4 rounded-full"
-        />
+        <div className=" rounded-full border-green border-[2px] overflow-hidden">
+          <Image
+            src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
+            alt="avatar"
+            width={160}
+            height={160}
+          />
+        </div>
+
         <p>{nickname}</p>
       </div>
-      <p className="w-1/4 flex justify-end">
-        {experience_earned.toLocaleString()} HP
-      </p>
+      <div className="flex items-center gap-10">
+        <Image src={"/images/HC_Icon.png"} alt="coin" width={48} height={48} />
+        <p className=" text-[55px]">{experience_earned.toLocaleString()}</p>
+      </div>
     </div>
   );
 };

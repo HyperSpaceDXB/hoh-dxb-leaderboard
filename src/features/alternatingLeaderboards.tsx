@@ -13,13 +13,13 @@ export default function AlternatingLeaderboard() {
     error: dailyError,
   } = useLeaders({ period: "DAY" });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowAllTime((prev) => !prev); // Toggle the component
-    }, 5000); // 5 seconds
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setShowAllTime((prev) => !prev); // Toggle the component
+  //   }, 5000); // 5 seconds
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, []);
+  //   return () => clearInterval(interval); // Cleanup interval on component unmount
+  // }, []);
 
   // if (isLoading || dailyLoading) {
   //   return <div>Loading...</div>;
