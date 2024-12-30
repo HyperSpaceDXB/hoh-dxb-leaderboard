@@ -33,13 +33,13 @@ const LeaderBoard: FC<{ data: ILeader[] | null }> = ({ data }) => {
   const column1 = data?.slice(0, 5);
   const column2 = data?.slice(5);
   return (
-    <div ref={ref} className="flex w-full bg-pink-500 border-2 border-pink-300">
-      <div className="w-1/2">
+    <div ref={ref} className="flex w-full justify-center  gap-[100px]">
+      <div className="flex flex-col gap-[100px] ">
         {column1?.map((leader) => (
           <Leader key={leader.id} {...leader} />
         ))}
       </div>
-      <div className="w-1/2">
+      <div className="flex flex-col gap-[100px]">
         {column2?.map((leader) => (
           <Leader key={leader.id} {...leader} />
         ))}

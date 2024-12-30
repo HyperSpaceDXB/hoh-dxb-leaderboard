@@ -3,7 +3,7 @@ import AlternatingLeaderboard from "@/features/alternatingLeaderboards";
 
 export default function Home() {
   return (
-    <div className="font-PPMon p-[120px] flex flex-col justify-between  h-screen">
+    <div className="font-PPMon py-[100px] px-[170px] flex flex-col justify-between h-screen items-center">
       <Heading />
       <AlternatingLeaderboard />
     </div>
