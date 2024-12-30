@@ -17,6 +17,9 @@ export default {
       boxShadow: {
         greenShadow: "0px 0px 30px 8px #4cff9f",
       },
+      fontFamily: {
+        PPMon: ["var(--font-PPMon)"],
+      },
     },
   },
   plugins: [],

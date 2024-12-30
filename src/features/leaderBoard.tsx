@@ -33,7 +33,7 @@ const LeaderBoard: FC<{ data: ILeader[] | null }> = ({ data }) => {
   const column1 = data?.slice(0, 5);
   const column2 = data?.slice(5);
   return (
-    <div ref={ref} className="flex w-full">
+    <div ref={ref} className="flex w-full bg-pink-500 border-2 border-pink-300">
       <div className="w-1/2">
         {column1?.map((leader) => (
           <Leader key={leader.id} {...leader} />

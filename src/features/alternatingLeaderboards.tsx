@@ -30,7 +30,7 @@ export default function AlternatingLeaderboard() {
   // }
 
   return (
-    <div>
+    <div className="">
       <h1>{showAllTime ? "All Time" : "Daily"}</h1>
       {showAllTime ? (
         <LeaderBoard data={data} />
