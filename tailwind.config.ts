@@ -18,8 +18,9 @@ export default {
         greenShadow: "0px 0px 30px 8px #4cff9f",
       },
       fontFamily: {
-        PPMon: ["var(--font-PPMon)"],
+        Arco: ["var(--font-arco)"],
         geSS: ["var(--font-geSS)"],
+        PPMon: ["var(--font-PPMon)"],
       },
       screens: {
         "2xl": "3700px",
