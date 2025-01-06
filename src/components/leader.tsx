@@ -4,7 +4,6 @@ import { FC } from "react";
 import { franc } from "franc";
 
 const Leader: FC<ILeader> = ({
-  id,
   avatar_thumbnail,
   avatar,
   nickname,
