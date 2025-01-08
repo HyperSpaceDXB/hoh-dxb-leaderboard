@@ -11,8 +11,12 @@ const Leader: FC<ILeader> = ({
   experience_earned,
 }) => {
   const lang = franc(nickname);
+
   return (
-    <div className="font-PPMon flex justify-between items-center w-full h-20 bg-gradient-to-r from-black to-black/55 rounded-full px-8">
+    <div
+      className="font-PPMon flex justify-between items-center w-full h-20 bg-gradient-to-r from-black to-black/55 rounded-full px-8"
+      id="leader"
+    >
       <div className="flex items-center gap-4">
         <p className="text-3xl">{position}.</p>
         <div className=" rounded-full border-green border-[2px] overflow-hidden">

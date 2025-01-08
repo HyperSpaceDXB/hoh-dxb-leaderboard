@@ -23,7 +23,21 @@ export default {
         PPMon: ["var(--font-PPMon)"],
       },
       screens: {
-        "2xl": "3700px",
+        "2xl": "1441px",
+      },
+      keyframes: {
+        flash: {
+          "0%,100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+        rotate: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        flash: "flash 1s step-start infinite",
+        rotate: "rotate 10s linear infinite;",
       },
     },
   },
