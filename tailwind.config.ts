@@ -51,7 +51,7 @@ export default {
       animation: {
         flash: "flash 1s step-start infinite",
         rotate: "rotate 10s linear infinite;",
-        flip: "flip 0.6s infinite linear",
+        flip: "flip 0.8s ease-in-out infinite ",
       },
     },
   },
