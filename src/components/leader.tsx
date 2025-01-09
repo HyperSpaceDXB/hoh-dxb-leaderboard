@@ -1,20 +1,31 @@
 import { ILeader } from "@/types";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { franc } from "franc";
 
-const Leader: FC<ILeader> = ({
+const Leader: FC<ILeader & { delay: number }> = ({
   avatar_thumbnail,
   avatar,
   nickname,
   position,
   experience_earned,
+  delay,
 }) => {
+  const [isSpinning, setIsSpinning] = useState(true);
   const lang = franc(nickname);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsSpinning(false); // Stop spinning after the delay
+    }, delay);
+
+    return () => clearTimeout(timer); // Cleanup
+  }, [delay]);
 
   return (
     <div
-      className="font-PPMon flex justify-between items-center w-full h-20 bg-gradient-to-r from-black to-black/55 rounded-full px-8"
+      className={`font-PPMon flex justify-between items-center w-full h-20 bg-gradient-to-r from-black to-black/55 rounded-full px-8 
+        ${isSpinning ? "animate-flip" : ""}`}
       id="leader"
     >
       <div className="flex items-center gap-4">
