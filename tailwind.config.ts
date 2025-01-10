@@ -18,11 +18,31 @@ export default {
         greenShadow: "0px 0px 30px 8px #4cff9f",
       },
       fontFamily: {
-        PPMon: ["var(--font-PPMon)"],
+        Arco: ["var(--font-arco)"],
         geSS: ["var(--font-geSS)"],
+        PPMon: ["var(--font-PPMon)"],
       },
       screens: {
-        "2xl": "3700px",
+        "2xl": "1441px",
+      },
+      keyframes: {
+        flash: {
+          "0%,100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+        rotate: {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        flip: {
+          "0%": { transform: "rotateX(0)" },
+          "100%": { transform: "rotateX(800deg)" },
+        },
+      },
+      animation: {
+        flash: "flash 1s step-start infinite",
+        rotate: "rotate 10s linear infinite;",
+        flip: "flip 0.5s linear infinite ",
       },
     },
   },

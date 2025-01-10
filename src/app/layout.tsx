@@ -2,14 +2,19 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const PPMon = localFont({
-  src: "../../public/fonts/PPMonumentExtendedVariable/PPMonumentExtended-Variable.woff",
-  variable: "--font-PPMon",
+const Arco = localFont({
+  src: "../../public/fonts/arco/ARCO.ttf",
+  variable: "--font-arco",
 });
 
 const GE_SS_Two = localFont({
   src: "../../public/fonts/GE_SS_Two/GE SS Two Medium.woff",
   variable: "--font-geSS",
+});
+
+const PPMon = localFont({
+  src: "../../public/fonts/PPMonumentExtendedVariable/PPMonumentExtended-Variable.woff",
+  variable: "--font-PPMon",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${PPMon.variable} ${GE_SS_Two.variable}`}>
+      <body
+        className={`${Arco.variable} ${GE_SS_Two.variable} ${PPMon.variable}`}
+      >
         {children}
       </body>
     </html>
