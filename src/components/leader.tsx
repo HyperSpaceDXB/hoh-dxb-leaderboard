@@ -16,10 +16,10 @@ const Leader: FC<ILeader & { delay: number }> = ({
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsSpinning(false); // Stop spinning after the delay
+      setIsSpinning(false);
     }, delay);
 
-    return () => clearTimeout(timer); // Cleanup
+    return () => clearTimeout(timer);
   }, [delay]);
 
   return (
@@ -28,26 +28,39 @@ const Leader: FC<ILeader & { delay: number }> = ({
         ${isSpinning ? "animate-flip" : ""}`}
       id="leader"
     >
-      <div className="flex items-center gap-4">
-        <p className="text-3xl">{position}.</p>
-        <div className=" rounded-full border-green border-[2px] overflow-hidden">
-          <Image
-            src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
-            alt="avatar"
-            width={56}
-            height={56}
-          />
-        </div>
-        <p
-          className={`text-3xl ${lang === "arb" ? "font-geSS" : "font-PPMon"}`}
-        >
-          {nickname}
-        </p>
-      </div>
-      <div className="flex  w-52 justify-between">
-        <Image src={"/images/HC_Icon.png"} alt="coin" width={36} height={24} />
-        <p className=" text-3xl">{experience_earned.toLocaleString()}</p>
-      </div>
+      {isSpinning ? (
+        ""
+      ) : (
+        <>
+          <div className="flex items-center gap-4">
+            <p className="text-3xl">{position}.</p>
+            <div className=" rounded-full border-green border-[2px] overflow-hidden">
+              <Image
+                src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
+                alt="avatar"
+                width={56}
+                height={56}
+              />
+            </div>
+            <p
+              className={`text-3xl ${
+                lang === "arb" ? "font-geSS" : "font-PPMon"
+              }`}
+            >
+              {nickname}
+            </p>
+          </div>
+          <div className="flex  w-52 justify-between">
+            <Image
+              src={"/images/HC_Icon.png"}
+              alt="coin"
+              width={36}
+              height={24}
+            />
+            <p className=" text-3xl">{experience_earned.toLocaleString()}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
