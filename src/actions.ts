@@ -16,6 +16,7 @@ export const fetchLeadersAction = async (
       },
       body: JSON.stringify({
         period,
+        park_id: process.env.NEXT_PUBLIC_PARK_ID,
       }),
       cache: "no-store", // Disable caching
     }
