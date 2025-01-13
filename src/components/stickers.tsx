@@ -4,54 +4,59 @@ import Image from "next/image";
 export default function Stickers() {
   const isPortrait = useIsPortrait();
   return isPortrait ? (
-    <div className="flex gap-5 absolute right-8 bottom-10">
+    <div className="flex gap-12 absolute right-10 bottom-10">
       <Image
         src={"/images/phrase_1.svg"}
         alt="phrase"
-        width={550}
+        width={1100}
         height={180}
         className="animate-flash"
       />
-      <Image src={"/images/pointer.svg"} alt="pointer" width={80} height={80} />
-      <Image src={"/images/qr.svg"} alt="qr" width={140} height={140} />
+      <Image
+        src={"/images/pointer.svg"}
+        alt="pointer"
+        width={200}
+        height={80}
+      />
+      <Image src={"/images/qr.svg"} alt="qr" width={340} height={140} />
     </div>
   ) : (
     <div>
-      <div className=" ">
+      <div>
         <Image
           src={"/images/phrase_2.svg"}
           alt="phrase"
-          width={190}
+          width={400}
           height={190}
-          className="animate-flash absolute right-52 top-8"
+          className="animate-flash absolute right-96 top-10"
         />
         <Image
           src={"/images/pointer_2.svg"}
           alt="pointer"
-          width={130}
+          width={250}
           height={130}
-          className="absolute right-52 top-36"
+          className="absolute right-96 top-64"
         />
         <Image
           src={"/images/qr.svg"}
           alt="qr code"
-          width={170}
+          width={300}
           height={170}
-          className="absolute right-6 top-6"
+          className="absolute right-10 top-10"
         />
         <Image
           src={"/images/smileyFace.svg"}
-          alt="qr code"
-          width={120}
+          alt="smiley face"
+          width={250}
           height={120}
-          className="absolute left-[77px] top-[96px]"
+          className="absolute left-[130px] top-[150px]"
         />
         <Image
           src={"/images/phrase_3.svg"}
-          alt="qr code"
-          width={180}
+          alt="phrase 3"
+          width={350}
           height={180}
-          className="absolute left-12 top-16 animate-rotate"
+          className="absolute left-20 top-24 animate-rotate"
         />
       </div>
     </div>

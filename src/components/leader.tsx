@@ -8,7 +8,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
   avatar,
   nickname,
   position,
-  experience_earned,
+  hypercoins_earned,
   delay,
 }) => {
   const [isSpinning, setIsSpinning] = useState(true);
@@ -24,7 +24,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
 
   return (
     <div
-      className={`font-PPMon flex justify-between items-center w-full h-20 bg-gradient-to-r from-black to-black/55 rounded-full px-8 
+      className={`font-PPMon flex justify-between items-center w-full  h-48 bg-gradient-to-r from-black to-black/55 rounded-full px-20 
         ${isSpinning ? "animate-flip" : ""}`}
       id="leader"
     >
@@ -32,32 +32,27 @@ const Leader: FC<ILeader & { delay: number }> = ({
         ""
       ) : (
         <>
-          <div className="flex items-center gap-4">
-            <p className="text-3xl">{position}.</p>
-            <div className=" rounded-full border-green border-[2px] overflow-hidden">
+          <div className="flex items-center gap-8">
+            <p className="text-6xl">{position}.</p>
+            <div className="relative rounded-full border-green border-[2px] overflow-hidden w-32 h-32">
               <Image
                 src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
                 alt="avatar"
-                width={56}
-                height={56}
+                objectFit="cover"
+                fill
               />
             </div>
             <p
-              className={`text-3xl ${
+              className={`text-6xl max-w-[1000px]  truncate ${
                 lang === "arb" ? "font-geSS" : "font-PPMon"
               }`}
             >
               {nickname}
             </p>
           </div>
-          <div className="flex  w-52 justify-between">
-            <Image
-              src={"/images/HC_Icon.png"}
-              alt="coin"
-              width={36}
-              height={24}
-            />
-            <p className=" text-3xl">{experience_earned.toLocaleString()}</p>
+          <div className="flex  justify-between items-center  w-80">
+            <Image src={"/images/HC.svg"} alt="coin" width={50} height={0} />
+            <p className=" text-6xl">{hypercoins_earned.toString()}</p>
           </div>
         </>
       )}
