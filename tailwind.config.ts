@@ -36,7 +36,7 @@ export default {
         },
         flip: {
           "0%": { transform: "rotateX(0)" },
-          "100%": { transform: "rotateX(800deg)" },
+          "100%": { transform: "rotateX(180deg)" },
         },
       },
       animation: {
