@@ -13,7 +13,7 @@ const Leaderboard: FC = () => {
     period: "ALL_TIME",
   });
   const [show, setShow] = useState(false);
-  console.log(dailyData);
+
   useEffect(() => {
     if (isLoading || dailyIsLoading) {
       setShow(false);
@@ -29,7 +29,7 @@ const Leaderboard: FC = () => {
       <>
         <div className="2xl:w-1/2">
           <h2 className="text-8xl text-black my-16 2xl:my-20">TODAY</h2>
-          <div className="flex flex-col gap-6 2xl:gap-310 " ref={ref}>
+          <div className="flex flex-col gap-6 2xl:gap-10 " ref={ref}>
             {dailyData?.slice(0, 6).map((leader, index) => (
               <Leader key={leader.id} {...leader} delay={index * 400} />
             ))}
