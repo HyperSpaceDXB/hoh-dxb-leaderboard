@@ -23,7 +23,7 @@ export default {
         PPMon: ["var(--font-PPMon)"],
       },
       screens: {
-        "2xl": "1200px",
+        "2xl": "3000",
       },
       keyframes: {
         flash: {
@@ -42,7 +42,7 @@ export default {
       animation: {
         flash: "flash 1s step-start infinite",
         rotate: "rotate 10s linear infinite;",
-        flip: "flip 0.5s linear infinite ",
+        flip: "flip 0.5s ease-out infinite ",
       },
     },
   },

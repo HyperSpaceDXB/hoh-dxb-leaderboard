@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "cdn.parx.online",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.qa.hoh-cloud.apptoku.com",
+        pathname: "**",
+      },
     ],
   },
 };
