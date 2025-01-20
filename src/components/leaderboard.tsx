@@ -27,10 +27,8 @@ const Leaderboard: FC = () => {
   return (
     show && (
       <>
-        <h1>{window.innerHeight}</h1>
-        <h1>{window.innerWidth}</h1>
         <div className="2xl:w-1/2">
-          <h2 className="text-8xl text-black my-16 2xl:my-20">TODAY</h2>
+          <h2 className="text-6xl text-black my-6 2xl:my-20">TODAY</h2>
           <div className="flex flex-col gap-6 2xl:gap-10 " ref={ref}>
             {dailyData?.slice(0, 6).map((leader, index) => (
               <Leader key={leader.id} {...leader} delay={index * 400} />
@@ -38,7 +36,7 @@ const Leaderboard: FC = () => {
           </div>
         </div>
         <div className="2xl:w-1/2">
-          <h2 className="text-8xl text-black my-16 2xl:my-20  2xl:text-right">
+          <h2 className="text-6xl text-black my-6 2xl:my-20  2xl:text-right">
             ALL TIME
           </h2>
           <div className="flex flex-col gap-6 2xl:gap-10 " ref={ref}>
