@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Stickers() {
   const isPortrait = useIsPortrait();
   return isPortrait ? (
-    <div className="flex gap-12 absolute right-10 bottom-10">
+    <div className="flex gap-6 absolute right-10 bottom-10">
       <Image
         src={"/images/phrase_1.svg"}
         alt="phrase"
