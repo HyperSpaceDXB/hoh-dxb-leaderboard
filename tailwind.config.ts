@@ -23,7 +23,7 @@ export default {
         PPMon: ["var(--font-PPMon)"],
       },
       screens: {
-        "2xl": "3000",
+        "2xl": "3000px",
       },
       keyframes: {
         flash: {
