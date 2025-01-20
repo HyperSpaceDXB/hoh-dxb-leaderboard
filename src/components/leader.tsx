@@ -43,7 +43,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
               />
             </div>
             <p
-              className={`text-4xl max-w-[500px]  truncate ${
+              className={`text-4xl max-w-[500px] bg-black 2xl:max-w-[380px]  truncate ${
                 lang === "arb" ? "font-geSS" : "font-PPMon"
               }`}
             >
