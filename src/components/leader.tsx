@@ -32,7 +32,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
         ""
       ) : (
         <>
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             <p className="text-4xl">{position}.</p>
             <div className="relative rounded-full border-green border-[2px] overflow-hidden w-14 h-14">
               <Image
@@ -50,8 +50,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
               {nickname}
             </p>
           </div>
-          <div className="flex  justify-between items-center  w-48">
-            <Image src={"/images/HC.svg"} alt="coin" width={40} height={0} />
+          <div className="flex  justify-end items-center  truncate max-w-48">
             <p className=" text-4xl">{hypercoins_earned.toString()}</p>
           </div>
         </>

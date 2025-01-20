@@ -15,7 +15,7 @@ export default function Stickers() {
       <Image
         src={"/images/pointer.svg"}
         alt="pointer"
-        width={200}
+        width={150}
         height={80}
       />
       <Image src={"/images/qr.svg"} alt="qr" width={340} height={140} />
