@@ -24,7 +24,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
 
   return (
     <div
-      className={`font-PPMon flex justify-between items-center w-full  h-20 bg-gradient-to-r from-black to-black/55 rounded-full px-14
+      className={`font-PPMon flex justify-between items-center w-full  h-40 bg-gradient-to-r from-black to-black/55 rounded-full px-20
         ${isSpinning ? "animate-flip" : ""}`}
       id="leader"
     >
@@ -32,9 +32,9 @@ const Leader: FC<ILeader & { delay: number }> = ({
         ""
       ) : (
         <>
-          <div className="flex items-center gap-6">
-            <p className="text-4xl">{position}.</p>
-            <div className="relative rounded-full border-green border-[2px] overflow-hidden w-14 h-14">
+          <div className="flex items-center gap-14">
+            <p className="text-7xl 2xl:text-[66px]">{position}.</p>
+            <div className="relative rounded-full border-green border-[2px] overflow-hidden w-28 h-28">
               <Image
                 src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
                 alt="avatar"
@@ -43,15 +43,17 @@ const Leader: FC<ILeader & { delay: number }> = ({
               />
             </div>
             <p
-              className={`text-4xl max-w-[500px] bg-black 2xl:max-w-[380px]  truncate ${
+              className={`text-7xl 2xl:text-[66px] max-w-[1100px] 2xl:w-[900px]  truncate ${
                 lang === "arb" ? "font-geSS" : "font-PPMon"
               }`}
             >
               {nickname}
             </p>
           </div>
-          <div className="flex  justify-end items-center  truncate max-w-48">
-            <p className=" text-4xl">{hypercoins_earned.toString()}</p>
+          <div className="flex  justify-end items-center truncate w-[450px] 2xl:w-[400px] 0">
+            <p className=" text-7xl 2xl:text-[66px]">
+              {hypercoins_earned.toString()}
+            </p>
           </div>
         </>
       )}
