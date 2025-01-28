@@ -2,9 +2,11 @@
 import Leader from "@/components/leader";
 import { FC, useEffect, useRef, useState } from "react";
 import { useLeaders } from "@/hooks/useLeaders";
+import useIsPortrait from "@/hooks/useIsPortrait";
 
 const Leaderboard: FC = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const isPortrait = useIsPortrait();
 
   const { data: dailyData, isLoading: dailyIsLoading } = useLeaders({
     period: "ALL_TIME",
@@ -27,19 +29,41 @@ const Leaderboard: FC = () => {
   return (
     show && (
       <>
-        <div className="2xl:w-1/2">
-          <h2 className="text-8xl text-black my-20">TODAY</h2>
-          <div className="flex flex-col gap-10 " ref={ref}>
+        <div className={` ${!isPortrait && "w-1/2"}`}>
+          <h2
+            className={` ${
+              isPortrait ? "text-[4.5vw] my-[1.5vw]" : "text-[2.5vw] my-[1vw]"
+            } text-black`}
+          >
+            TODAY
+          </h2>
+          <div
+            className={`flex flex-col ${
+              isPortrait ? "gap-[2vw]" : "gap-[1vw]"
+            }`}
+            ref={ref}
+          >
             {dailyData?.slice(0, 6).map((leader, index) => (
               <Leader key={leader.id} {...leader} delay={index * 400} />
             ))}
           </div>
         </div>
-        <div className="2xl:w-1/2">
-          <h2 className="text-8xl text-black my-20  2xl:text-right">
+        <div className={` ${!isPortrait && "w-1/2"}`}>
+          <h2
+            className={` ${
+              isPortrait
+                ? "text-[4.5vw] my-[1.5vw]"
+                : "text-[2.5vw] my-[1vw] text-right"
+            } text-black`}
+          >
             ALL TIME
           </h2>
-          <div className="flex flex-col gap-10  " ref={ref}>
+          <div
+            className={`flex flex-col ${
+              isPortrait ? "gap-[2vw]" : "gap-[1vw]"
+            }`}
+            ref={ref}
+          >
             {data?.slice(0, 6).map((leader, index) => (
               <Leader key={leader.id} {...leader} delay={index * 400} />
             ))}

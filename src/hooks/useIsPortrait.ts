@@ -5,7 +5,7 @@ const useIsPortrait = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsPortrait(window.innerWidth < 2200); // Change the threshold as needed
+      setIsPortrait(window.innerWidth < window.innerHeight); // Change the threshold as needed
     };
 
     // Initial check on mount
