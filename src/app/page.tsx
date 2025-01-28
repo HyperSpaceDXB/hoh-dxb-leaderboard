@@ -1,15 +1,32 @@
+"use client";
 import Leaderboard from "@/components/leaderboard";
 
 import Stickers from "@/components/stickers";
+import useIsPortrait from "@/hooks/useIsPortrait";
 import Image from "next/image";
 
 export default function Home() {
+  const isPortrait = useIsPortrait();
   return (
-    <div className="font-Arco py-2 h-screen  bg-[url('/images/bg.svg')] bg-cover 2xl:flex 2xl:flex-col 2xl:justify-start items-center 2xl:pb-0">
-      <div className=" 2xl:w-[900px] h-[250px] m-12 2xl:m-6  relative">
+    <div
+      className={`font-Arco h-screen  bg-[url('/images/bg.svg')] bg-cover pt-[2vw] ${
+        isPortrait ? "" : "flex flex-col justify-start items-center"
+      }`}
+    >
+      <div
+        className={`relative ${
+          isPortrait ? " h-[16vw] m-[2vw] " : "w-[60vw] h-[11vw] m-0 mt-[1vw]"
+        }`}
+      >
         <Image src={"/images/heading.svg"} alt="heading" fill />
       </div>
-      <div className="px-14 2xl:px-16 w-full 2xl:flex 2xl:justify-between 2xl:gap-32">
+      <div
+        className={`w-full ${
+          isPortrait
+            ? "px-[4vw]"
+            : "px-[2vw] pt-[1vw] flex justify-between gap-[3vw]"
+        } `}
+      >
         <Leaderboard />
       </div>
       <Stickers />

@@ -2,6 +2,7 @@ import { ILeader } from "@/types";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { franc } from "franc";
+import useIsPortrait from "@/hooks/useIsPortrait";
 
 const Leader: FC<ILeader & { delay: number }> = ({
   avatar_thumbnail,
@@ -12,6 +13,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
   delay,
 }) => {
   const [isSpinning, setIsSpinning] = useState(true);
+  const isPortrait = useIsPortrait();
   const lang = franc(nickname);
 
   useEffect(() => {
@@ -24,17 +26,25 @@ const Leader: FC<ILeader & { delay: number }> = ({
 
   return (
     <div
-      className={`font-PPMon flex justify-between items-center w-full  h-40 bg-gradient-to-r from-black to-black/55 rounded-full px-20
-        ${isSpinning ? "animate-flip" : ""}`}
-      id="leader"
+      className={`font-PPMon flex justify-between items-center w-full bg-gradient-to-r from-black to-black/55 rounded-full
+        ${isPortrait ? "h-[8vw] px-[4vw]" : "h-[4.5vw] px-[2vw]"}
+        ${isSpinning && "animate-flip"}`}
     >
-      {isSpinning ? (
-        ""
-      ) : (
+      {!isSpinning && (
         <>
-          <div className="flex items-center gap-14">
-            <p className="text-7xl 2xl:text-[66px]">{position}.</p>
-            <div className="relative rounded-full border-green border-[2px] overflow-hidden w-28 h-28">
+          <div
+            className={`flex items-center ${
+              isPortrait ? "gap-[2.5vw]" : "gap-[1.5vw]"
+            }`}
+          >
+            <p className={` ${isPortrait ? "text-[3.5vw]" : "text-[1.5vw]"}`}>
+              {position}.
+            </p>
+            <div
+              className={`relative rounded-full border-green border-[2px] overflow-hidden ${
+                isPortrait ? "w-[6vw] h-[6vw]" : "w-[3vw] h-[3vw]"
+              }`}
+            >
               <Image
                 src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
                 alt="avatar"
@@ -43,17 +53,24 @@ const Leader: FC<ILeader & { delay: number }> = ({
               />
             </div>
             <p
-              className={`text-4xl max-w-[500px]  2xl:max-w-[380px]  truncate ${
+              className={`truncate  ${
                 lang === "arb" ? "font-geSS" : "font-PPMon"
+              }
+              ${
+                isPortrait
+                  ? "text-[3.5vw] max-w-[45vw]"
+                  : "text-[1.5vw] max-w-[21vw]"
               }`}
             >
               {nickname}
             </p>
           </div>
-          <div className="flex  justify-end items-center truncate w-[450px] 2xl:w-[400px] 0">
-            <p className=" text-7xl 2xl:text-[66px]">
-              {hypercoins_earned.toString()}
-            </p>
+          <div
+            className={`flex  justify-end items-center truncate ${
+              isPortrait ? "w-[20vw] text-[3.5vw]" : "w-[10vw] text-[1.5vw]"
+            }`}
+          >
+            {hypercoins_earned.toString()}
           </div>
         </>
       )}

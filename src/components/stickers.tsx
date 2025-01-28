@@ -4,59 +4,47 @@ import Image from "next/image";
 export default function Stickers() {
   const isPortrait = useIsPortrait();
   return isPortrait ? (
-    <div className="flex gap-10 absolute right-10 bottom-10">
-      <Image
-        src={"/images/phrase_1.svg"}
-        alt="phrase"
-        width={600}
-        height={180}
-        className="animate-flash"
-      />
-      <Image
-        src={"/images/pointer.svg"}
-        alt="pointer"
-        width={250}
-        height={80}
-      />
-      <Image src={"/images/qr.svg"} alt="qr" width={200} height={140} />
+    <div className="absolute bottom-0 right-0  bg-red-600 w-full">
+      <div className="w-[60vw] h-[10vw] absolute right-[35vw] bottom-[5vw] ">
+        <Image
+          src={"/images/phrase_1.svg"}
+          alt="phrase"
+          fill
+          className="animate-flash "
+        />
+      </div>
+      <div className="w-[14vw] h-[10vw] absolute right-[20vw] bottom-[5vw]">
+        <Image src={"/images/pointer.svg"} alt="pointer" fill />
+      </div>
+      <div className="w-[16vw] h-[16vw] absolute right-[2.5vw] bottom-[2.5vw]">
+        <Image src={"/images/qr.svg"} alt="qr" fill />
+      </div>
     </div>
   ) : (
     <div>
-      <div>
+      <div className="w-[10vw] h-[7vw] absolute right-[11vw] top-[1vw]">
         <Image
           src={"/images/phrase_2.svg"}
           alt="phrase"
-          width={210}
-          height={150}
-          className="animate-flash absolute right-52 top-8"
+          fill
+          className="animate-flash "
         />
-        <Image
-          src={"/images/pointer_2.svg"}
-          alt="pointer"
-          width={120}
-          height={130}
-          className="absolute right-56 top-40"
-        />
-        <Image
-          src={"/images/qr.svg"}
-          alt="qr code"
-          width={170}
-          height={170}
-          className="absolute right-6 top-6"
-        />
-        <Image
-          src={"/images/smileyFace.svg"}
-          alt="smiley face"
-          width={150}
-          height={120}
-          className="absolute left-[100px] top-[84px]"
-        />
+      </div>
+      <div className="w-[6vw] h-[6vw] absolute right-[11.5vw] top-[7.5vw]">
+        <Image src={"/images/pointer_2.svg"} alt="pointer" fill />
+      </div>
+      <div className="w-[8vw] h-[8vw] absolute right-[2vw] top-[2vw]">
+        <Image src={"/images/qr.svg"} alt="qr code" fill />
+      </div>
+      <div className="w-[8vw] h-[8vw] absolute left-[5vw] top-[4vw]">
+        <Image src={"/images/smileyFace.svg"} alt="smiley face" fill />
+      </div>
+      <div className="w-[12vw] h-[12vw] absolute left-[3vw] top-[2vw]">
         <Image
           src={"/images/phrase_3.svg"}
           alt="phrase 3"
-          width={220}
-          height={180}
-          className="absolute left-16 top-12 animate-rotate"
+          fill
+          className="animate-rotate"
         />
       </div>
     </div>
