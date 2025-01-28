@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FC, useEffect, useState } from "react";
 import { franc } from "franc";
 import useIsPortrait from "@/hooks/useIsPortrait";
+import { numberWithCommas } from "@/helpers";
 
 const Leader: FC<ILeader & { delay: number }> = ({
   avatar_thumbnail,
@@ -70,7 +71,7 @@ const Leader: FC<ILeader & { delay: number }> = ({
               isPortrait ? "w-[20vw] text-[3.5vw]" : "w-[10vw] text-[1.5vw]"
             }`}
           >
-            {hypercoins_earned.toString()}
+            {numberWithCommas(hypercoins_earned)}
           </div>
         </>
       )}
