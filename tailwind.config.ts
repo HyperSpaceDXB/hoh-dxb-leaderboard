@@ -22,9 +22,7 @@ export default {
         geSS: ["var(--font-geSS)"],
         PPMon: ["var(--font-PPMon)"],
       },
-      screens: {
-        "2xl": "2200px",
-      },
+
       keyframes: {
         flash: {
           "0%,100%": { opacity: "1" },
