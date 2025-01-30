@@ -32,15 +32,10 @@ export default {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
-        flip: {
-          "0%": { transform: "rotateX(0)" },
-          "100%": { transform: "rotateX(180deg)" },
-        },
       },
       animation: {
         flash: "flash 1s step-start infinite",
         rotate: "rotate 10s linear infinite;",
-        flip: "flip 0.5s ease-out infinite ",
       },
     },
   },

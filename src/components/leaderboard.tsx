@@ -43,8 +43,8 @@ const Leaderboard: FC = () => {
             }`}
             ref={ref}
           >
-            {dailyData?.slice(0, 6).map((leader, index) => (
-              <Leader key={leader.id} {...leader} delay={index * 400} />
+            {dailyData?.slice(0, 6).map((leader) => (
+              <Leader key={leader.id} {...leader} />
             ))}
           </div>
         </div>
@@ -64,8 +64,8 @@ const Leaderboard: FC = () => {
             }`}
             ref={ref}
           >
-            {data?.slice(0, 6).map((leader, index) => (
-              <Leader key={leader.id} {...leader} delay={index * 400} />
+            {data?.slice(0, 6).map((leader) => (
+              <Leader key={leader.id} {...leader} />
             ))}
           </div>
         </div>
