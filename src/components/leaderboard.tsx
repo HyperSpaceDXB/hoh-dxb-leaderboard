@@ -9,7 +9,7 @@ const Leaderboard: FC = () => {
   const isPortrait = useIsPortrait();
 
   const { data: dailyData, isLoading: dailyIsLoading } = useLeaders({
-    period: "ALL_TIME",
+    period: "DAY",
   });
   const { data: data, isLoading: isLoading } = useLeaders({
     period: "ALL_TIME",
