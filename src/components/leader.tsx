@@ -1,5 +1,4 @@
 import { ILeader } from "@/types";
-import Image from "next/image";
 import { FC } from "react";
 import { franc } from "franc";
 import useIsPortrait from "@/hooks/useIsPortrait";
