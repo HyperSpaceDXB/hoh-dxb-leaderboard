@@ -34,11 +34,10 @@ const Leader: FC<ILeader> = ({
             isPortrait ? "w-[6vw] h-[6vw]" : "w-[3vw] h-[3vw]"
           }`}
         >
-          <Image
+          <img
+            className="object-cover"
             src={avatar_thumbnail || avatar || "/images/avatar.jpg"}
             alt="avatar"
-            objectFit="cover"
-            fill
           />
         </div>
         <p
