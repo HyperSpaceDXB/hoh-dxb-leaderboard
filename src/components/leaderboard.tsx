@@ -3,6 +3,7 @@ import Leader from "@/components/leader";
 import { FC, useEffect, useRef, useState } from "react";
 import { useLeaders } from "@/hooks/useLeaders";
 import useIsPortrait from "@/hooks/useIsPortrait";
+import { ILeader } from "@/types";
 
 const Leaderboard: FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,6 +26,16 @@ const Leaderboard: FC = () => {
       }
     }
   }, [isLoading, dailyIsLoading, data, dailyData]);
+  let trimmedData: ILeader[] = [];
+
+  if (data) {
+    trimmedData = data.map((record) => {
+      return {
+        ...record,
+        hypercoins_earned: Math.floor(record.hypercoins_earned / 10),
+      };
+    });
+  }
 
   return (
     show && (
@@ -64,7 +75,7 @@ const Leaderboard: FC = () => {
             }`}
             ref={ref}
           >
-            {data?.slice(0, 6).map((leader) => (
+            {trimmedData?.slice(0, 6).map((leader) => (
               <Leader key={leader.id} {...leader} />
             ))}
           </div>
