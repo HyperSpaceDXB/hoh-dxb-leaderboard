@@ -69,7 +69,7 @@ const Leaderboard: FC = () => {
             ref={ref}
           >
             {allTimeData?.slice(0, 6).map((leader, index) => (
-              <Leader key={leader.id} {...leader} position={index} />
+              <Leader key={leader.id} {...leader} position={index + 1} />
             ))}
           </div>
         </div>
