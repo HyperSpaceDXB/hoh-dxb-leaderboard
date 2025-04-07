@@ -28,6 +28,7 @@ const Leaderboard: FC = () => {
   }, [isLoading, dailyIsLoading, data, dailyData]);
   let allTimeData: ILeader[] = [];
   if (data) {
+    console.log(data);
     allTimeData = data.filter((item) => item.hypercoins_earned < 1000000);
   }
   return (
