@@ -3,6 +3,7 @@ import Leader from "@/components/leader";
 import { FC, useEffect, useRef, useState } from "react";
 import { useLeaders } from "@/hooks/useLeaders";
 import useIsPortrait from "@/hooks/useIsPortrait";
+import { ILeader } from "@/types";
 
 const Leaderboard: FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -67,8 +68,8 @@ const Leaderboard: FC = () => {
             }`}
             ref={ref}
           >
-            {allTimeData?.slice(0, 6).map((leader,index) => (
-              <Leader key={leader.id} {...leader} position={index}/>
+            {allTimeData?.slice(0, 6).map((leader, index) => (
+              <Leader key={leader.id} {...leader} position={index} />
             ))}
           </div>
         </div>
