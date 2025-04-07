@@ -29,7 +29,7 @@ const Leaderboard: FC = () => {
 
   let allTimeData: ILeader[] = [];
   if (data) {
-    allTimeData = data.filter((item) => item.hypercoins_earned < 100000);
+    allTimeData = data.filter((item) => item.hypercoins_earned < 1000000);
   }
 
   return (
