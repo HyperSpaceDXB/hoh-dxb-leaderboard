@@ -26,17 +26,11 @@ const Leaderboard: FC = () => {
       }
     }
   }, [isLoading, dailyIsLoading, data, dailyData]);
-  let trimmedData: ILeader[] = [];
-
+  let allTimeData: ILeader[] = [];
   if (data) {
-    trimmedData = data.map((record) => {
-      return {
-        ...record,
-        hypercoins_earned: Math.floor(record.hypercoins_earned / 10),
-      };
-    });
+    console.log(data);
+    allTimeData = data.filter((item) => item.hypercoins_earned < 1000000);
   }
-
   return (
     show && (
       <>
@@ -75,8 +69,8 @@ const Leaderboard: FC = () => {
             }`}
             ref={ref}
           >
-            {trimmedData?.slice(0, 6).map((leader) => (
-              <Leader key={leader.id} {...leader} />
+            {allTimeData?.slice(0, 6).map((leader, index) => (
+              <Leader key={leader.id} {...leader} position={index + 1} />
             ))}
           </div>
         </div>
