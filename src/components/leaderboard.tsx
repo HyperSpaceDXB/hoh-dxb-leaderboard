@@ -3,7 +3,6 @@ import Leader from "@/components/leader";
 import { FC, useEffect, useRef, useState } from "react";
 import { useLeaders } from "@/hooks/useLeaders";
 import useIsPortrait from "@/hooks/useIsPortrait";
-import { ILeader } from "@/types";
 
 const Leaderboard: FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,11 +25,7 @@ const Leaderboard: FC = () => {
       }
     }
   }, [isLoading, dailyIsLoading, data, dailyData]);
-  let allTimeData: ILeader[] = [];
-  if (data) {
-    console.log(data);
-    allTimeData = data.filter((item) => item.hypercoins_earned < 1000000);
-  }
+
   return (
     show && (
       <>
@@ -69,7 +64,7 @@ const Leaderboard: FC = () => {
             }`}
             ref={ref}
           >
-            {allTimeData?.slice(0, 6).map((leader, index) => (
+            {data?.slice(0, 6).map((leader, index) => (
               <Leader key={leader.id} {...leader} position={index + 1} />
             ))}
           </div>
