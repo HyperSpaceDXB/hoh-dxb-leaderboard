@@ -1,5 +1,5 @@
 "use client";
-import useIsPortrait from "@/hooks/useIsPortrait";
+import useIsPortrait from "@/hooks";
 import Image from "next/image";
 export default function Stickers() {
   const isPortrait = useIsPortrait();
