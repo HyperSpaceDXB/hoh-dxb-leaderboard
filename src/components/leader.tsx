@@ -10,15 +10,12 @@ const Leader: FC<ILeader> = ({
   position,
   hypercoins_earned,
 }) => {
-  const isPortrait = false;
   const lang = franc(nickname);
 
   return (
     <div className="font-PPMon flex justify-between items-center w-full bg-gradient-to-r from-black to-black/55 rounded-full h-[4.5vw] px-[2vw] portrait:h-[8vw] portrait:px-[4vw]">
       <div className="flex items-center gap-[1.5vw] portrait:gap-[2.5vw] ">
-        <p className={` ${isPortrait ? "text-[3.5vw]" : "text-[1.5vw]"}`}>
-          {position}.
-        </p>
+        <p className="portrait:text-[3.5vw] text-[1.5vw]">{position}.</p>
         <div className="relative rounded-full border-green border-[2px] overflow-hidden w-[3vw] h-[3vw] portrait:w-[6vw] portrait:h-[6vw]">
           <img
             className="object-cover"
